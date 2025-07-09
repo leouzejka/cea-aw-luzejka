@@ -9,21 +9,21 @@ source as (
 renamed as (
 
     select
-        businessentityid,
-        nationalidnumber,
-        loginid,
-        jobtitle,
-        birthdate,
-        maritalstatus,
-        gender,
-        hiredate,
-        salariedflag,
-        vacationhours,
-        sickleavehours,
-        currentflag,
-        rowguid,
-        modifieddate,
-        organizationnode
+          businessentityid as id_funcionario
+        , jobtitle as titulo_funcionario
+        , birthdate as data_nascimento
+        , hiredate as data_contratacao
+         --nationalidnumber,
+        --loginid,
+        --maritalstatus,
+        --gender,
+        --salariedflag,
+        --vacationhours,
+        --sickleavehours,
+        --currentflag,
+        --rowguid,
+        --modifieddate,
+        --organizationnode
 
     from source
 

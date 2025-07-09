@@ -9,31 +9,31 @@ source as (
 renamed as (
 
     select
-        productid,
-        name,
-        productnumber,
-        makeflag,
-        finishedgoodsflag,
-        color,
-        safetystocklevel,
-        reorderpoint,
-        standardcost,
-        listprice,
-        size,
-        sizeunitmeasurecode,
-        weightunitmeasurecode,
-        weight,
-        daystomanufacture,
-        productline,
-        class,
-        style,
-        productsubcategoryid,
-        productmodelid,
-        sellstartdate,
-        sellenddate,
-        discontinueddate,
-        rowguid,
-        modifieddate
+        productid as id_produto
+        , name as nome_produto
+        , productsubcategoryid as id_subcategoria
+        , standardcost as custo_standard
+        -- productnumber
+        -- makeflag
+        -- finishedgoodsflag
+        -- color
+        -- safetystocklevel
+        -- reorderpoint
+        -- listprice
+        -- size
+        -- sizeunitmeasurecode
+        -- weightunitmeasurecode
+        -- weight
+        -- daystomanufacture
+        -- productline
+        -- class
+        -- style
+        -- productmodelid
+        -- sellstartdate
+        -- sellenddate
+        -- discontinueddate
+        -- rowguid
+        -- modifieddate
 
     from source
 
