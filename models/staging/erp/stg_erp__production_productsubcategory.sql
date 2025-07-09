@@ -9,11 +9,11 @@ source as (
 renamed as (
 
     select
-        productsubcategoryid,
-        productcategoryid,
-        name,
-        rowguid,
-        modifieddate
+          productsubcategoryid as id_subcategoria
+        , productcategoryid as id_categoria
+        , name as nome_subcategoria
+        -- rowguid
+        -- modifieddate
 
     from source
 

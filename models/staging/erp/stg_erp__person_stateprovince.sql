@@ -9,14 +9,15 @@ source as (
 renamed as (
 
     select
-        stateprovinceid,
-        stateprovincecode,
-        countryregioncode,
-        isonlystateprovinceflag,
-        name,
-        territoryid,
-        rowguid,
-        modifieddate
+          stateprovinceid as id_estado
+        , territoryid as id_territorio
+        , stateprovincecode as codigo_estado
+        , countryregioncode as codigo_pais
+        , name as nome_estado
+        
+        -- isonlystateprovinceflag
+        -- rowguid
+        -- modifieddate
 
     from source
 

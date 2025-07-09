@@ -1,3 +1,10 @@
+--base de todos os individuos cadastrados
+-- IN - individual
+-- EM - (employee) fucionario
+-- SP - (sales person) vendedor
+-- SC - (store contact) contato de loja
+-- VC - (vendor contact) contato de fornecedor
+-- GC - (General contact) contato geral
 with 
 
 source as (
@@ -9,19 +16,20 @@ source as (
 renamed as (
 
     select
-        businessentityid,
-        persontype,
-        namestyle,
-        title,
-        firstname,
-        middlename,
-        lastname,
-        suffix,
-        emailpromotion,
-        additionalcontactinfo,
-        demographics,
-        rowguid,
-        modifieddate
+          businessentityid as id_pessoa --tem ligação com outras tabelas
+        , persontype as tipo_pessoa
+        , firstname || ' ' || lastname as nome_completo
+        -- namestyle
+        -- title
+        -- firstname
+        -- middlename
+        -- lastname
+        -- suffix
+        -- emailpromotion
+        -- additionalcontactinfo
+        -- demographics
+        -- rowguid
+        -- modifieddate
 
     from source
 

@@ -9,9 +9,9 @@ source as (
 renamed as (
 
     select
-        countryregioncode,
-        name,
-        modifieddate
+          countryregioncode as codigo_pais
+        , name as nome_pais
+        -- modifieddate
 
     from source
 
