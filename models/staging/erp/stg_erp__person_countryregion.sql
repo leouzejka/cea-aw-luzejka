@@ -9,8 +9,8 @@ source as (
 renamed as (
 
     select
-          countryregioncode as codigo_pais
-        , name as nome_pais
+          cast(countryregioncode as varchar) as codigo_pais
+        , cast(name as varchar) as nome_pais
         -- modifieddate
 
     from source

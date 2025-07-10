@@ -9,9 +9,9 @@ source as (
 renamed as (
 
     select
-          productsubcategoryid as id_subcategoria
-        , productcategoryid as id_categoria
-        , name as nome_subcategoria
+          cast(productsubcategoryid as int) as id_subcategoria
+        , cast(productcategoryid as int) as id_categoria
+        , cast(name as varchar) as nome_subcategoria
         -- rowguid
         -- modifieddate
 

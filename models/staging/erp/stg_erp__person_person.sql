@@ -16,9 +16,9 @@ source as (
 renamed as (
 
     select
-          businessentityid as id_pessoa --tem ligação com outras tabelas
-        , persontype as tipo_pessoa
-        , firstname || ' ' || lastname as nome_completo
+          cast(businessentityid as int) as id_pessoa --tem ligação com outras tabelas
+        , cast(persontype as varchar) as tipo_pessoa
+        , cast((firstname || ' ' || lastname) as varchar) as nome_completo
         -- namestyle
         -- title
         -- firstname

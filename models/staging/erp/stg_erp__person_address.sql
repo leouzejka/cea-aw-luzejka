@@ -9,9 +9,9 @@ source as (
 renamed as (
 
     select
-          addressid as id_endereco
-        , city as cidade
-        , stateprovinceid as id_estado
+          cast(addressid as int) as id_endereco
+        , cast(city as varchar) as cidade
+        , cast(stateprovinceid as int) as id_estado
         -- addressline1
         -- addressline2
         -- postalcode

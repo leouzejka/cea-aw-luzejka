@@ -9,21 +9,21 @@ source as (
 renamed as (
 
     select
-          salesorderid as id_pedido    
-        , orderdate as data_pedido
-        , duedate as data_limite_entrega
-        , shipdate as data_envio
-        , status as status_pedido
-        , onlineorderflag as venda_online_flag
-        , customerid as id_cliente
-        , salespersonid as id_vendedor
-        , territoryid as id_territorio
-        , shiptoaddressid as id_endereco_envio
-        , creditcardid as id_cartao
-        , subtotal as subtotal_pedido
-        , taxamt as valor_taxa
-        , freight as valor_frete
-        , totaldue as total_pedido
+          cast(salesorderid as int) as id_pedido    
+        , cast(orderdate as date) as data_pedido
+        , cast(duedate as date) as data_limite_entrega
+        , cast(shipdate as date) as data_envio
+        , cast(status as varchar) as status_pedido
+        , cast(onlineorderflag as varchar) as venda_online_flag
+        , cast(customerid as int) as id_cliente
+        , cast(salespersonid as int) as id_vendedor
+        , cast(territoryid as int) as id_territorio
+        , cast(shiptoaddressid as int) as id_endereco_envio
+        , cast(creditcardid as int) as id_cartao
+        , cast(subtotal as numeric(18,2))as subtotal_pedido
+        , cast(taxamt as numeric(18,2))as valor_taxa
+        , cast(freight as numeric(18,2))as valor_frete
+        , cast(totaldue as numeric(18,2))as total_pedido
         -- revisionnumber
         -- creditcardapprovalcode
         -- currencyrateid

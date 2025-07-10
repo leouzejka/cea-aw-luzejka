@@ -9,10 +9,10 @@ source as (
 renamed as (
 
     select
-        productid as id_produto
-        , name as nome_produto
-        , productsubcategoryid as id_subcategoria
-        , standardcost as custo_standard
+          cast(productid as int) as id_produto
+        , cast(name as varchar) as nome_produto
+        , cast(productsubcategoryid as int) as id_subcategoria
+        , cast(standardcost as numeric(18,2)) as custo_padrao
         -- productnumber
         -- makeflag
         -- finishedgoodsflag

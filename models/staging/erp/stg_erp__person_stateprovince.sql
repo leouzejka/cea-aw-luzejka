@@ -9,11 +9,11 @@ source as (
 renamed as (
 
     select
-          stateprovinceid as id_estado
-        , territoryid as id_territorio
-        , stateprovincecode as codigo_estado
-        , countryregioncode as codigo_pais
-        , name as nome_estado
+          cast(stateprovinceid as int) as id_estado
+        , cast(territoryid as int) as id_territorio
+        , cast(stateprovincecode as varchar) as codigo_estado
+        , cast(countryregioncode as varchar) as codigo_pais
+        , cast(name as varchar) nome_estado
         
         -- isonlystateprovinceflag
         -- rowguid

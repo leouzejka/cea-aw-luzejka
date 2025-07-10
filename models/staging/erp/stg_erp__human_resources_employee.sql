@@ -9,10 +9,10 @@ source as (
 renamed as (
 
     select
-          businessentityid as id_funcionario
-        , jobtitle as titulo_funcionario
-        , birthdate as data_nascimento
-        , hiredate as data_contratacao
+          cast(businessentityid as int) as id_funcionario
+        , cast(jobtitle as varchar) as titulo_funcionario
+        , cast(birthdate as date) as data_nascimento
+        , cast(hiredate as date) as data_contratacao
          --nationalidnumber,
         --loginid,
         --maritalstatus,
