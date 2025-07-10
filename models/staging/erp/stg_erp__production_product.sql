@@ -13,6 +13,7 @@ renamed as (
         , cast(name as varchar) as nome_produto
         , cast(productsubcategoryid as int) as id_subcategoria
         , cast(standardcost as numeric(18,2)) as custo_padrao
+        , cast(discontinueddate as date) as data_descontinuado
         -- productnumber
         -- makeflag
         -- finishedgoodsflag
@@ -31,7 +32,6 @@ renamed as (
         -- productmodelid
         -- sellstartdate
         -- sellenddate
-        -- discontinueddate
         -- rowguid
         -- modifieddate
 
