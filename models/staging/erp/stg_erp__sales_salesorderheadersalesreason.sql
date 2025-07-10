@@ -9,8 +9,8 @@ source as (
 renamed as (
 
     select
-          salesorderid as id_pedido
-        , salesreasonid as id_razao_pedido
+          cast(salesorderid as int) as id_pedido
+        , cast(salesreasonid as int) as id_razao_pedido
         --modifieddate
 
     from source

@@ -9,8 +9,8 @@ source as (
 renamed as (
 
     select
-        businessentityid as id_vendedor
-        , territoryid as id_territorio
+          cast(businessentityid as int) as id_vendedor
+        , cast(territoryid as int) as id_territorio
         -- salesquota
         -- bonus
         -- commissionpct,

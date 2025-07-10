@@ -9,10 +9,10 @@ source as (
 renamed as (
 
     select
-          customerid as id_cliente
-        , personid as id_pessoa
-        , storeid as id_loja
-        , territoryid as id_territorio
+          cast(customerid as int) as id_cliente
+        , cast(personid as int) as id_pessoa
+        , cast(storeid as int) as id_loja
+        , cast(territoryid as int) as id_territorio
         -- rowguid
         -- modifieddate
 
