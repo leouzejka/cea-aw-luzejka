@@ -1,10 +1,11 @@
 with 
     calendario as (
-        {{ dbt_date.get_date_dimension("2011-05-30", "2014-08-01") }}
+        {{ dbt_date.get_date_dimension("2011-01-01", "2014-12-31") }}
     )
 
     select 
-          cast(date_day as date) as data_completa
+          cast(TO_VARCHAR(cast(date_day as date), 'YYYYMMDD') as int) as data_pk
+        , cast(date_day as date) as data_completa
         , cast(day_of_month as int) as dia_do_mes
         , cast(month_of_year as int) as numero_mes        
         , cast(year_number as int) as ano

@@ -47,4 +47,4 @@ models:
       
       marts: 
         +materialized: table
-        +schema: view
+        +schema: mrt

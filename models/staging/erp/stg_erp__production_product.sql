@@ -13,6 +13,7 @@ renamed as (
         , cast(name as varchar) as nome_produto
         , cast(productsubcategoryid as int) as id_subcategoria
         , cast(standardcost as numeric(18,2)) as custo_padrao
+        , cast(listprice as numeric(18,2)) as preco_lista
         , cast(discontinueddate as date) as data_descontinuado
         -- productnumber
         -- makeflag
@@ -20,7 +21,6 @@ renamed as (
         -- color
         -- safetystocklevel
         -- reorderpoint
-        -- listprice
         -- size
         -- sizeunitmeasurecode
         -- weightunitmeasurecode

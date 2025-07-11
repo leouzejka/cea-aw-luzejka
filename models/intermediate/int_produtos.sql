@@ -17,7 +17,7 @@ with
     joined as (
         select
         --IDs
-              produtos.id_produto
+              produtos.id_produto as produto_pk 
             , subcategorias.id_subcategoria
             , categorias.id_categoria
 

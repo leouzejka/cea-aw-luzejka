@@ -5,7 +5,7 @@ with
     )
 
 select
-          cast(id_cartao as int) as id_cartao
+          cast(id_cartao as int) as cartao_pk
         , cast(tipo_cartao as varchar) as tipo_cartao
 
     from fonte_cartao

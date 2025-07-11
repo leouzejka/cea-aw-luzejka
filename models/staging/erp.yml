@@ -1,20 +1,73 @@
+version: 2
+
 sources:
   - name: erp
     database: fea25_05 
     schema: raw_adventure_works
     tables:
+      # Tabela de Pedidos - a mais crítica
+      - name: sales_salesorderheader
+        columns:
+          - name: salesorderid
+            data_tests:
+              - unique
+              - not_null
+          - name: customerid
+            data_tests:
+              - not_null
+              - relationships:
+                  to: source('erp', 'sales_customer')
+                  field: customerid
+      #Pedido
+      - name: sales_salesorderdetail
+        columns:
+          - name: salesorderid
+            data_tests:
+              - not_null
+          - name: salesorderdetailid
+            data_tests:
+              - not_null
+          - name: productid
+            data_tests:
+              - not_null
+              - relationships:
+                  to: source('erp', 'production_product')
+                  field: productid
+
+      #Produtos
+      - name: production_product
+        columns:
+          - name: productid
+            data_tests:
+              - unique
+              - not_null
+
+      #Clientes
       - name: sales_customer
+        columns:
+          - name: customerid
+            data_tests:
+              - unique
+              - not_null
+          - name: personid
+            data_tests:
+              - relationships:
+                  to: source('erp', 'person_person')
+                  field: businessentityid
+      - name: person_person
+        columns:
+          - name: businessentityid
+            data_tests:
+              - unique
+              - not_null
+
       - name: sales_salesreason
       - name: sales_salesperson
       - name: human_resources_employee
-      - name: person_person
       - name: person_stateprovince
       - name: person_address
       - name: person_countryregion
-      - name: sales_salesorderheader
-      - name: sales_salesorderdetail
       - name: sales_salesorderheadersalesreason
-      - name: production_product
+      - name: sales_creditcard
       - name: production_productsubcategory
       - name: production_productcategory
-      - name: sales_creditcard

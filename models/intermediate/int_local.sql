@@ -16,7 +16,7 @@ with
 
     joined as (
         select
-              enderecos.id_endereco
+              enderecos.id_endereco as local_pk
             , enderecos.cidade
             , estados.nome_estado
             , estados.codigo_estado
