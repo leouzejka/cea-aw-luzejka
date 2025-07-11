@@ -13,7 +13,8 @@ with
     joined as (
         select 
         --IDs
-              pedidos.id_pedido
+              detalhes_pedidos.id_detalhepedido as venda_sk
+            , pedidos.id_pedido
             , pedidos.id_cliente
             , pedidos.id_vendedor
             , pedidos.id_territorio

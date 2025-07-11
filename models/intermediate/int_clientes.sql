@@ -13,7 +13,7 @@ with
 
     joined as (
         select
-              clientes.id_cliente
+              clientes.id_cliente as cliente_pk
             , pessoas.id_entidade
             , clientes.id_loja
             , pessoas.tipo_pessoa
