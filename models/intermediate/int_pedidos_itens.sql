@@ -9,7 +9,6 @@ with
         from {{ ref('stg_erp__sales_salesorderdetail') }}
     ), 
 
-
     joined as (
         select 
         --IDs
@@ -39,7 +38,9 @@ with
 
         from pedidos
         left join detalhes_pedidos on pedidos.id_pedido = detalhes_pedidos.id_pedido
+ 
     )
 
     select * from joined
+
 

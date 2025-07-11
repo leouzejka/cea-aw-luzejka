@@ -9,9 +9,9 @@ source as (
 renamed as (
 
     select
-          cast(salesreasonid as int) as id_razao_pedido
-        , cast(name as varchar) as nome_razao
-        , cast(reasontype as varchar) as tipo_razao
+          cast(salesreasonid as int) as id_motivo_pedido
+        , cast(name as varchar) as nome_motivo
+        , cast(reasontype as varchar) as tipo_motivo
         -- modifieddate
 
     from source
