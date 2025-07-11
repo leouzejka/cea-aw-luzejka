@@ -9,6 +9,3 @@ select total_calculado
 from vendas_2011
 
 where total_calculado not between 12646112.14 and 12646112.18
-
-
-select * from {{ ref('fct_vendas') }}
