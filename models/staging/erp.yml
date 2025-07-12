@@ -5,7 +5,7 @@ sources:
     database: fea25_05 
     schema: raw_adventure_works
     tables:
-      # Tabela de Pedidos - a mais crítica
+      #Tabela de Pedidos
       - name: sales_salesorderheader
         columns:
           - name: salesorderid
@@ -18,7 +18,7 @@ sources:
               - relationships:
                   to: source('erp', 'sales_customer')
                   field: customerid
-      #Pedido
+      #Detalhes dos Pedidos
       - name: sales_salesorderdetail
         columns:
           - name: salesorderid
