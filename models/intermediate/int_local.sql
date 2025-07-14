@@ -19,7 +19,6 @@ with
               enderecos.id_endereco as local_pk
             , enderecos.cidade
             , estados.nome_estado
-            , estados.codigo_estado
             , paises.nome_pais
 
         from enderecos
