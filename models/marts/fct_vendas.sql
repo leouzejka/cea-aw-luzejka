@@ -44,6 +44,8 @@ select
     , dim_vendedores.vendedor_pk
     , pedidos_itens.venda_sk
     , pedidos_itens.id_pedido
+    , pedidos_itens.status_pedido
+    , pedidos_itens.venda_online
     , pedidos_itens.quantidade_item
     , pedidos_itens.faturamento_bruto_item
     , pedidos_itens.valor_desconto_item
