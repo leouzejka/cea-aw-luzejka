@@ -6,11 +6,9 @@ with
     select 
           cast(TO_VARCHAR(cast(date_day as date), 'YYYYMMDD') as int) as data_pk
         , cast(date_day as date) as data_completa
-        , cast(day_of_month as int) as dia_do_mes
-        , cast(month_of_year as int) as numero_mes        
+        , cast(day_of_month as int) as dia
+        , cast(month_of_year as int) as mes      
         , cast(year_number as int) as ano
-        , cast(day_of_week as int) as numero_dia_semana
-        , cast(quarter_of_year as int) as trimestre_do_ano
         , cast(
             case month_of_year
                 when 1 then 'Janeiro'
@@ -27,17 +25,6 @@ with
                 else 'Dezembro'
             end 
             as varchar) as nome_mes
-        
-        , cast(
-            case day_of_week
-                when 1 then 'Segunda-feira'
-                when 2 then 'Terça-feira'
-                when 3 then 'Quarta-feira'
-                when 4 then 'Quinta-feira'
-                when 5 then 'Sexta-feira'
-                when 6 then 'Sábado'
-                else 'Domingo'
-            end
-            as varchar) as nome_dia_semana
+
 
     from calendario
