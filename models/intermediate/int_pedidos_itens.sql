@@ -29,8 +29,20 @@ with
             , detalhes_pedidos.preco_unitario
             , detalhes_pedidos.desconto_por_unidade
         --Outros
-            , pedidos.status_pedido
-            , pedidos.venda_online_flag
+            , case
+                when pedidos.status_pedido = 1 then 'Em processo'
+                when pedidos.status_pedido = 2 then 'Aprovado'
+                when pedidos.status_pedido = 3 then 'Pedido em espera'
+                when pedidos.status_pedido = 4 then 'Rejeitado'
+                when pedidos.status_pedido = 5 then 'Enviado'
+                when pedidos.status_pedido = 6 then 'Cancelado'
+                else 'Desconhecido'
+            end as status_pedido
+
+            , case
+                when pedidos.venda_online_flag = true then 'Sim'
+                when pedidos.venda_online_flag = false then 'Não'
+            end as venda_online
         --Metricas
             , (detalhes_pedidos.preco_unitario * detalhes_pedidos.quantidade_item) as faturamento_bruto_item
             , (detalhes_pedidos.preco_unitario * detalhes_pedidos.quantidade_item * detalhes_pedidos.desconto_por_unidade) as valor_desconto_item  
