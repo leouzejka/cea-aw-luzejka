@@ -1,6 +1,8 @@
 with
     dim_cartao as (
-    select *
+    select 
+          cartao_pk
+        , tipo_cartao
     from {{ ref('int_cartao') }}
 )
 select * from dim_cartao
