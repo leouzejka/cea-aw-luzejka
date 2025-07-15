@@ -32,6 +32,10 @@ with
     dim_vendedores as (
         select *
         from {{ ref('dim_vendedores') }}
+    ), 
+    dim_motivo as (
+        select *
+        from {{ ref('dim_motivo') }}
     )
 
 select
@@ -42,6 +46,7 @@ select
     , dim_calendario.data_pk
     , dim_cartao.cartao_pk
     , dim_vendedores.vendedor_pk
+    , dim_motivo.tipo_motivo
     , pedidos_itens.venda_sk
     , pedidos_itens.id_pedido
     , pedidos_itens.status_pedido
@@ -60,3 +65,4 @@ left join dim_local on pedidos_itens.id_endereco_envio = dim_local.local_pk
 left join dim_calendario on cast(TO_VARCHAR(pedidos_itens.data_pedido, 'YYYYMMDD') as int) = dim_calendario.data_pk
 left join dim_cartao on pedidos_itens.id_cartao = dim_cartao.cartao_pk
 left join dim_vendedores on pedidos_itens.id_vendedor = dim_vendedores.vendedor_pk
+left join dim_motivo on pedidos_itens.id_pedido = dim_motivo.id_pedido

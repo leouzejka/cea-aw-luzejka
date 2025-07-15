@@ -1,7 +1,7 @@
 with
     dim_local as (
     select
-        local_pk
+          local_pk
         , cidade
         , nome_estado
         , nome_pais
